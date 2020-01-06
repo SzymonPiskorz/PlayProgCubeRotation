@@ -50,21 +50,94 @@ void Game::initialize()
 	// Initalizes and Compiled to GPU
 	// https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml
 	glNewList(index, GL_COMPILE);
-	glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLES);
 	{
-		//Front Face
-		glColor3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(v3.getX(), 1.0f, -5.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f);
-		glVertex3f(-1.0f, -1.0f, -5.0f);
-		glVertex3f(1.0f, -1.0f, -5.0f);
+		//Front bottom
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glVertex3f(-1.0f, -1.0f, 1.0f); //i0
+		glVertex3f(1.0f, -1.0f, 1.0f); //i1
+		glVertex3f(1.0f, 1.0f, 1.0f); //i2
 
-		//Back Face
+		//Front top
+		glColor3f(1.0f, 0.0f, 0.0f);
+		glVertex3f(1.0f, 1.0f, 1.0f); //i2
+		glVertex3f(-1.0f, 1.0f, 1.0f); //i3
+		glVertex3f(-1.0f, -1.0f, 1.0f); //i0
+
+		//Top front
+		glColor3f(0.0f, 0.0f, 1.0f);
+		glVertex3f(1.0f, 1.0f, 1.0f); //i2
+		glVertex3f(-1.0f, 1.0f, 1.0f); //i3
+		glVertex3f(1.0f, 1.0f, -1.0f); //i6
+
+		//Top back
+		glColor3f(0.0f, 0.0f, 1.0f);
+		glVertex3f(1.0f, 1.0f, -1.0f); //i6
+		glVertex3f(-1.0f, 1.0f, -1.0f); //i7
+		glVertex3f(-1.0f, 1.0f, 1.0f); //i3
+
+		//Back Top
 		glColor3f(0.0f, 1.0f, 0.0f);
-		glVertex3f(1.0f, 1.0f, -15.0f);
-		glVertex3f(-1.0f, 1.0f, -15.0f);
-		glVertex3f(-1.0f, -1.0f, -15.0f);
-		glVertex3f(1.0f, -1.0f, -15.0f);
+		glVertex3f(-1.0f, 1.0f, -1.0f); //i7
+		glVertex3f(1.0f, 1.0f, -1.0f); //i6
+		glVertex3f(1.0f, -1.0f, -1.0f); //i5
+
+		//Back bottom
+		glColor3f(0.0f, 1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, -1.0f); //i5
+		glVertex3f(-1.0f, -1.0f, -1.0f); //i4
+		glVertex3f(-1.0f, 1.0f, -1.0f); //i7
+
+		//Bottom back
+		glColor3f(1.0f, 1.0f, 0.0f);
+		glVertex3f(1.0f, -1.0f, -1.0f); //i5
+		glVertex3f(-1.0f, -1.0f, -1.0f); //i4
+		glVertex3f(-1.0f, -1.0f, 1.0f); //i0
+
+		//Bottom front
+		glColor3f(1.0f, 1.0f, 0.0f);
+		glVertex3f(-1.0f, -1.0f, 1.0f); //i0
+		glVertex3f(1.0f, -1.0f, -1.0f); //i5
+		glVertex3f(1.0f, -1.0f, 1.0f); //i1
+
+		//Right bottom
+		glColor3f(0.0f, 1.0f, 1.0f);
+		glVertex3f(1.0f, -1.0f, 1.0f); //i1
+		glVertex3f(1.0f, -1.0f, -1.0f); //i5
+		glVertex3f(1.0f, 1.0f, -1.0f); //i6
+
+		//Right top
+		glColor3f(0.0f, 1.0f, 1.0f);
+		glVertex3f(1.0f, 1.0f, -1.0f); //i6
+		glVertex3f(1.0f, 1.0f, 1.0f); //i2
+		glVertex3f(1.0f, -1.0f, 1.0f); //i1
+
+		//Left bottom
+		glColor3f(1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, -1.0f, -1.0f); //i4
+		glVertex3f(-1.0f, -1.0f, 1.0f); //i0
+		glVertex3f(-1.0f, 1.0f, 1.0f); //i3
+
+		//Left top
+		glColor3f(1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 1.0f, 1.0f); //i3
+		glVertex3f(-1.0f, -1.0f, -1.0f); //i4
+		glVertex3f(-1.0f, 1.0f, -1.0f); //i7
+
+
+		////Front Face
+		//glColor3f(0.0f, 0.0f, 1.0f);
+		//glVertex3f(v3.getX(), 1.0f, -5.0f);
+		//glVertex3f(-1.0f, 1.0f, -5.0f);
+		//glVertex3f(-1.0f, -1.0f, -5.0f);
+		//glVertex3f(1.0f, -1.0f, -5.0f);
+
+		////Back Face
+		//glColor3f(0.0f, 1.0f, 0.0f);
+		//glVertex3f(1.0f, 1.0f, -15.0f);
+		//glVertex3f(-1.0f, 1.0f, -15.0f);
+		//glVertex3f(-1.0f, -1.0f, -15.0f);
+		//glVertex3f(1.0f, -1.0f, -15.0f);
 
 		//Complete the faces of the Cube
 	}
@@ -109,6 +182,7 @@ void Game::draw()
 
 	cout << "Drawing Cube " << endl;
 	glLoadIdentity();
+	glTranslatef(0.0f, 0.0f, -5.0f);
 	glRotatef(rotationAngle, 0, 0, 1); // Rotates the camera on Y Axis
 
 	glCallList(1);
