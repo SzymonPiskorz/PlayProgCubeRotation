@@ -220,14 +220,16 @@ void Game::update()
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_indexPosition[i] = transformMatrix.Scale(101, 101) * m_indexPosition[i];
+			//m_indexPosition[i] = transformMatrix.Scale(101, 101) * m_indexPosition[i];
+			m_indexPosition[i] = transformMatrix.Scale3D(101) * m_indexPosition[i];
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_indexPosition[i] = transformMatrix.Scale(99, 99) * m_indexPosition[i];
+			//m_indexPosition[i] = transformMatrix.Scale(99, 99) * m_indexPosition[i];
+			m_indexPosition[i] = transformMatrix.Scale3D(99) * m_indexPosition[i];
 		}
 	}
 
